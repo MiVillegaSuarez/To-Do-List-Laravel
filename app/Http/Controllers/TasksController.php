@@ -14,8 +14,8 @@ class TasksController extends Controller {
         $this->manager = new Manager(); 
     }
 
-    public function taskList() {   
-        return view("tasks.task-list")
+    public function dashboard() {   
+        return view("dashboard")
             ->with("tasks", $this->manager->taksList());
     }
 
@@ -29,7 +29,7 @@ class TasksController extends Controller {
         } else {
             Alert::error("No se pudo crear el estudiante el registro");
         }
-        return redirect()->route("task.tasklist");
+        return redirect()->route("dashboard");
     }
 
     public function edit($id) {
@@ -43,16 +43,16 @@ class TasksController extends Controller {
         } else {
             Alert::error("No se pudo actualizar el registro");
         }
-        return redirect()->route("task.tasklist");
+        return redirect()->route("dashboard");
     }
 
     public function delete($id) {
         if($this->manager->taskDelete($id)){
             Alert::success("El registro fue eliminado exitosamente");
-            return redirect()->route("task.tasklist");
+            return redirect()->route("dashboard");
         }else{
             Alert::error("El registro no pudo ser eliminado");
-            return redirect()->route("task.tasklist");
+            return redirect()->route("dashboard");
         }
     }
 

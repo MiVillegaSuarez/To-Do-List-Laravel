@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('tasks.master')
 @section('content-create')
     <div class="container-fluid">
         <div class="row">

@@ -8,15 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Ruta para master de tareas
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Ruta a dashboard despues de iniciar sesion
+Route::get("dashboard", "App\Http\Controllers\TasksController@dashboard")
+        ->middleware(['auth', 'verified'])
+        ->name("dashboard");
 
-Route::middleware('auth')->group(function () {
-    //Ruta para mostrar todas las tareas
-    Route::get("tasks/task-list", "App\Http\Controllers\TasksController@taskList")->name("task.tasklist");
-    
+Route::middleware('auth')->group(function () {    
     // Rutas para crear nuevas tareas
     Route::get("tasks/create", "App\Http\Controllers\TasksController@create")->name("task.create");
     Route::post("tasks/store", "App\Http\Controllers\TasksController@store")->name("task.store");

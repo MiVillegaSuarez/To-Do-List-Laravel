@@ -1,4 +1,3 @@
-@extends('dashboard')
 @section('content-list')
     <div class="container-fluid">
         <div class="row">

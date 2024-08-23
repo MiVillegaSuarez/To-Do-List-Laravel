@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('tasks.master')
 @section('content-update')
     <p>actualizar</p>
     <div class="container-fluid">
