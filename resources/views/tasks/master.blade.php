@@ -19,11 +19,11 @@
                     @yield('content-create')
                     @yield('content-update')
 
-                    <form action="{{url('tokens/create')}}" method="POST">
+                    {{-- <form action="{{url('tokens/create')}}" method="POST">
                         @csrf
                         <input type="text" name="token_name" id="" placeholder="Nombre del token">
                         <input type="submit" value="Generar token">
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
