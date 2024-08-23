@@ -24,11 +24,8 @@ class TasksController extends Controller {
     }
 
     public function store(Request $request) {
-        if ($this->manager->taskCreate($request)) {
-            Alert::success("Se creo exitosamente el estudiante");
-        } else {
-            Alert::error("No se pudo crear el estudiante el registro");
-        }
+        $this->manager->taskCreate($request);
+
         return redirect()->route("dashboard");
     }
 
@@ -38,22 +35,15 @@ class TasksController extends Controller {
     }
 
     public function update(Request $request, $id) {
-        if ($this->manager->taskUpdate($request, $id)) {
-            Alert::success("Se actualizo correctamente el registro");
-        } else {
-            Alert::error("No se pudo actualizar el registro");
-        }
+        $this->manager->taskUpdate($request, $id);
+
         return redirect()->route("dashboard");
     }
 
     public function delete($id) {
-        if($this->manager->taskDelete($id)){
-            Alert::success("El registro fue eliminado exitosamente");
-            return redirect()->route("dashboard");
-        }else{
-            Alert::error("El registro no pudo ser eliminado");
-            return redirect()->route("dashboard");
-        }
+        $this->manager->taskDelete($id);
+
+        return redirect()->route("dashboard");
     }
 
 }

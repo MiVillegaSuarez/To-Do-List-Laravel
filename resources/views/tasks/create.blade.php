@@ -1,5 +1,6 @@
 @extends('tasks.master')
 @section('content-create')
+    <h1>CREAR</h1>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-sm-0"></div>

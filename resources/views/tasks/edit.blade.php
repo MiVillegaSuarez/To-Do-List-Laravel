@@ -1,6 +1,6 @@
 @extends('tasks.master')
 @section('content-update')
-    <p>actualizar</p>
+    <h1>ACTUALIZAR</h1>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-sm-0"></div>

@@ -7,7 +7,8 @@ use App\Models\TasksModel;
 class Manager {
     public function taksList()
     {
-        return TasksModel::all();
+        // return TasksModel::all();
+        return TasksModel::orderBy('id', 'desc')->get();
     }
 
     public function taskSearch($id)
